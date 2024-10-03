@@ -1,0 +1,17 @@
+flowchart TD
+    A[Start] --> B{Is the site space constrained?}
+    B -->|Yes| C[No room for Solar]
+    B -->|No| C[No room for Solar]
+    C --> D{Is the site in an urban or rural location?}
+    D -->|Urban| E[Fuel Type: Natural Gas]
+    D -->|Rural| F[Fuel Type: Diesel]
+    E --> G{Is the site in close proximity (< X# miles) to other sites?}
+    F --> G
+    G -->|Yes| H[Candidate for Mobile Solutions]
+    G -->|No| I[Stationary Solutions]
+    H --> J{Is the priority short term costs or long term benefit?}
+    I --> J
+    J -->|Short Term Costs| K[Solution: Generators]
+    J -->|Long Term Benefit| L[Solution: BESS]
+    K --> M[Fuel Type: (refer above)]
+    L --> N[Solar Feasibility: Can be done if space is available]
